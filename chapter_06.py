@@ -32,7 +32,7 @@ def init_messages():
 
 
 def select_model():
-    model = st.sidebar.radio("Choose a model:", ("gpt-3.5-turbo", "gpt-4"))
+    model_name = st.sidebar.radio("Choose a model:", ("gpt-3.5-turbo", "gpt-4"))
 
     return ChatOpenAI(temperature=0, model_name=model_name)
 

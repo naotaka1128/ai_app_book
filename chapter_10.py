@@ -28,7 +28,7 @@ def init_page():
 
 
 def select_model():
-    model = st.sidebar.radio("Choose a model:", ("gpt-3.5-turbo", "gpt-3.5-turbo-16k", "gpt-4"))
+    st.session_state.model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-3.5-16k", "GPT-4"))
     
     # 300: The number of tokens for instructions outside the main text
     st.session_state.max_token = OpenAI.modelname_to_contextsize(st.session_state.model_name) - 300

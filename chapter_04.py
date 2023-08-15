@@ -27,13 +27,13 @@ def init_messages():
 
 
 def select_model():
-    model = st.sidebar.radio("Choose a model:", ("gpt-3.5-turbo", "gpt-4"))
+    model_name = st.sidebar.radio("Choose a model:", ("gpt-3.5-turbo", "gpt-4"))
 
     # Add a slider to allow users to select the temperature from 0 to 2.
     # The initial value should be 0.0, with an increment of 0.01.
     temperature = st.sidebar.slider("Temperature:", min_value=0.0, max_value=2.0, value=0.0, step=0.01)
 
-    return ChatOpenAI(temperature=temperature, model_name=model)
+    return ChatOpenAI(temperature=temperature, model_name=model_name)
 
 
 def get_answer(llm, messages):
