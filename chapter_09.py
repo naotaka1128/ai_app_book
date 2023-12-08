@@ -32,7 +32,7 @@ def get_pdf_text():
         pdf_reader = PdfReader(uploaded_file)
         text = '\n\n'.join([page.extract_text() for page in pdf_reader.pages])
         text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-            model_name=st.session_state.emb_model_name,
+            model_name="text-embedding-ada-002",
             # The appropriate chunk size needs to be adjusted based on the PDF being queried.
             # If it's too large, it may not be able to reference information from various parts during question answering.
             # On the other hand, if it's too small, one chunk may not contain enough contextual information.
