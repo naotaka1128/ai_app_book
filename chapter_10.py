@@ -31,7 +31,7 @@ def select_model():
     model = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-3.5-16k", "GPT-4"))
     if model == "GPT-3.5":
         st.session_state.model_name = "gpt-3.5-turbo"
-    elif model == "GPT-3.5":
+    elif model == "GPT-3.5-16k":
         st.session_state.model_name = "gpt-3.5-turbo-16k"
     else:
         st.session_state.model_name = "gpt-4"
